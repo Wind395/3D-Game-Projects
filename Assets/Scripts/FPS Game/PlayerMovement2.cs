@@ -10,6 +10,7 @@ public class PlayerMovement2 : MonoBehaviour
     private float xRotation;
 
     public float speed = 5.0f;
+    public float rotationSpeed = 2.0f;
     public float jumpForce = 5.0f;
 
     Rigidbody rb;
@@ -53,8 +54,8 @@ public class PlayerMovement2 : MonoBehaviour
     void CameraController() 
     {
         // Input Mouse while move with direction X & Y
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
+        float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
         // Set value mouseX plus for direction Y and mouse Y minus for direction X (If  it's opposite, it will reverse direction)
         yRotation += mouseX;
